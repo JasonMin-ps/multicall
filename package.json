@@ -8,6 +8,8 @@
     "compile":"hardhat compile",
     "deploy:rinkeby": "hardhat run scripts/deploy.js --network rinkeby",
     "verify:rinkeby": "hardhat run scripts/verify.js --network rinkeby",
+    "deploy:mumbai": "hardhat run scripts/deploy.js --network mumbai",
+    "verify:mumbai": "hardhat run scripts/verify.js --network mumbai",
     "start": "hardhat run scripts/start.js"
   },
   "devDependencies": {

@@ -4,9 +4,7 @@ const { ethers, web3 } = require("hardhat");
 const GreeterArtifact = require("../artifacts/contracts/interfaces/IGreeter.sol/IGreeter.json");
 const MulticallArtifact = require("../artifacts/contracts/interfaces/IMulticall.sol/IMulticall.json");
 
-// rinkeby, mumbai
-const greeterAddress = "0x503d195187F5c756fabAcA0b32AC4201d9B93a42";
-const multicallAddress = "0xB1c6c7689fAc4b64081E4BB617F9C372C9994cF9";
+const { greeterAddress, multicallAddress } = require("../config.json").address.mumbai;
 
 async function mainEthers() {
   const [Greeter, Multicall] = await Promise.all([

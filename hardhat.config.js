@@ -1,7 +1,9 @@
 "use strict";
+require("@nomiclabs/hardhat-ethers");
 require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-web3");
 require("@nomiclabs/hardhat-etherscan");
+
 const { apiKey, infuraKey, privateKey } = require("./config.json");
 
 task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
@@ -16,12 +18,12 @@ module.exports = {
   defaultNetwork: "rinkeby",
   networks: {
     hardhat: {},
-    mumbai: {
-      url: "https://rpc-mumbai.maticvigil.com",
-      accounts: [privateKey],
-    },
     rinkeby: {
       url: "https://rinkeby.infura.io/v3/" + infuraKey,
+      accounts: [privateKey],
+    },
+    mumbai: {
+      url: "https://rpc-mumbai.maticvigil.com",
       accounts: [privateKey],
     },
   },
