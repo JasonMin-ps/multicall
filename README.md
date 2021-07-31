@@ -1,6 +1,6 @@
 # multicall
 
-1. Get a etherscan API Key, Infura Key, metamask account private key and put into config.json
+1. Get a etherscan API Key, Infura Key, Metamask account Private Key and put into config.json
    ```sh
    cp -R config-example.json config.json
    ```
