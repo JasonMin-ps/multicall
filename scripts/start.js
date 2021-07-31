@@ -1,8 +1,8 @@
 "use strict";
 const { ethers, web3 } = require("hardhat");
 
-const GreeterArtifact = require("../artifacts/contracts/Greeter.sol/Greeter.json");
-const MulticallArtifact = require("../artifacts/contracts/Multicall.sol/Multicall.json");
+const GreeterArtifact = require("../artifacts/contracts/interfaces/IGreeter.sol/IGreeter.json");
+const MulticallArtifact = require("../artifacts/contracts/interfaces/IMulticall.sol/IMulticall.json");
 
 // rinkeby, mumbai
 const greeterAddress = "0x503d195187F5c756fabAcA0b32AC4201d9B93a42";

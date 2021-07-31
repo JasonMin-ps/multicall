@@ -25,31 +25,28 @@ interface IMulticall {
 
     function getBlockHash(uint256 blockNumber)
         external
-        view
         returns (bytes32 blockHash);
 
-    function getBlockNumber() external view returns (uint256 blockNumber);
+    function getBlockNumber() external returns (uint256 blockNumber);
 
-    function getCurrentBlockCoinbase() external view returns (address coinbase);
+    function getCurrentBlockCoinbase() external returns (address coinbase);
 
     function getCurrentBlockDifficulty()
         external
-        view
+        
         returns (uint256 difficulty);
 
-    function getCurrentBlockGasLimit() external view returns (uint256 gaslimit);
+    function getCurrentBlockGasLimit() external returns (uint256 gaslimit);
 
     function getCurrentBlockTimestamp()
         external
-        view
         returns (uint256 timestamp);
 
     function getEthBalance(address addr)
         external
-        view
         returns (uint256 balance);
 
-    function getLastBlockHash() external view returns (bytes32 blockHash);
+    function getLastBlockHash() external returns (bytes32 blockHash);
 
     function tryAggregate(bool requireSuccess, Call[] memory calls)
         external
