@@ -6,6 +6,7 @@ interface IMulticall {
         address target;
         bytes callData;
     }
+
     struct Result {
         bool success;
         bytes returnData;
@@ -31,20 +32,13 @@ interface IMulticall {
 
     function getCurrentBlockCoinbase() external returns (address coinbase);
 
-    function getCurrentBlockDifficulty()
-        external
-        
-        returns (uint256 difficulty);
+    function getCurrentBlockDifficulty() external returns (uint256 difficulty);
 
     function getCurrentBlockGasLimit() external returns (uint256 gaslimit);
 
-    function getCurrentBlockTimestamp()
-        external
-        returns (uint256 timestamp);
+    function getCurrentBlockTimestamp() external returns (uint256 timestamp);
 
-    function getEthBalance(address addr)
-        external
-        returns (uint256 balance);
+    function getEthBalance(address addr) external returns (uint256 balance);
 
     function getLastBlockHash() external returns (bytes32 blockHash);
 
