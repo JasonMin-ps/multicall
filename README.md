@@ -8,7 +8,7 @@
    ```sh
    yarn
    ```
-3. Start test mullticall contracton rinkeby
+3. Start test mullticall contract rinkeby
    ```JS
    yarn start
    ```
