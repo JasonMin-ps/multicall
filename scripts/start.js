@@ -7,12 +7,10 @@ const MulticallArtifact = require("../artifacts/contracts/interfaces/IMulticall.
 const { greeterAddress, multicallAddress } = require("../config.json").address.mumbai;
 
 async function mainEthers() {
-  const [Greeter, Multicall] = await Promise.all([
-    ethers.getContractFactory("Greeter"),
-    ethers.getContractFactory("Multicall"),
+  const [greeter, multicall] = await Promise.all([
+    ethers.getContractAt("Greeter", greeterAddress),
+    ethers.getContractAt("Multicall", multicallAddress),
   ]);
-
-  const [greeter, multicall] = await Promise.all([Greeter.attach(greeterAddress), Multicall.attach(multicallAddress)]);
 
   const { data } = await greeter.populateTransaction.setGreeting("test multicall");
 
@@ -40,7 +38,7 @@ async function mainWeb3() {
   console.log("greet:", await greeter.methods.greet().call());
 }
 
-mainWeb3()
+mainEthers()
   .then(() => process.exit(0))
   .catch((error) => {
     console.error(error);
