@@ -1,5 +1,15 @@
 {
   "apiKey": "",
   "infuraKey" : "",
-  "privateKey" : ""
+  "privateKey" : "",
+  "address": {
+    "rinkeby": {
+      "greeterAddress" :"0x9829C7DaC68a7f501be97A5eF2fB49AC717FC801",
+      "multicallAddress": "0xA8b7763A70A94C3F35fEB6c8752815b63C2A214D"
+    },
+    "mumbai": {
+      "greeterAddress" :"0x5094925091D094254d6336A7c13Ec38D788baD6a",
+      "multicallAddress": "0x7F3f06036d14Aac0A2E963a56E88d4E3569779e3"
+    }
+  }
 }
