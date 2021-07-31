@@ -38,7 +38,7 @@ async function mainWeb3() {
   console.log("greet:", await greeter.methods.greet().call());
 }
 
-mainEthers()
+mainWeb3()
   .then(() => process.exit(0))
   .catch((error) => {
     console.error(error);
