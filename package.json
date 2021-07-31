@@ -4,7 +4,7 @@
   "main": "hardhat.config.js",
   "license": "MIT",
   "scripts": {
-    "clear": "rm -rf artifacts/ cache/",
+    "clean": "harhat clean",
     "compile":"hardhat compile",
     "deploy:rinkeby": "hardhat run scripts/deploy.js --network rinkeby",
     "verify:rinkeby": "hardhat run scripts/verify.js --network rinkeby",
