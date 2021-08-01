@@ -15,7 +15,7 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 });
 
 module.exports = {
-  defaultNetwork: "arbitrumTestnet",
+  defaultNetwork: "rinkeby",
   networks: {
     hardhat: {},
     localhost: {
@@ -25,12 +25,12 @@ module.exports = {
       url: "https://rinkeby.infura.io/v3/" + infuraKey,
       accounts: [privateKey],
     },
-    mumbai: {
-      url: "https://rpc-mumbai.maticvigil.com",
-      accounts: [privateKey],
-    },
     arbitrumTestnet: {
       url: "https://rinkeby.arbitrum.io/rpc",
+      accounts: [privateKey],
+    },
+    mumbai: {
+      url: "https://rpc-mumbai.maticvigil.com",
       accounts: [privateKey],
     },
   },
