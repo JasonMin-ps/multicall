@@ -10,6 +10,10 @@
     "mumbai": {
       "greeterAddress" :"0x5094925091D094254d6336A7c13Ec38D788baD6a",
       "multicallAddress": "0x7F3f06036d14Aac0A2E963a56E88d4E3569779e3"
+    },
+    "arbitrumTestnet": {
+      "greeterAddress":"0x3BdF43522B8e3437744bDfe6836a16DD1A446c42",
+      "multicallAddress":"0x9b36ae72c9C853Ac9FA1Cc4993d3B48D2e2eAa9a"
     }
   }
 }

@@ -1,7 +1,7 @@
 "use strict";
 const { run } = require("hardhat");
 
-const { greeterAddress, multicallAddress } = require("../config.json").address.mumbai;
+const { greeterAddress, multicallAddress } = require("../config.json").address.rinkeby;
 
 async function main() {
   // verify greeter

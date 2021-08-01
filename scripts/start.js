@@ -4,7 +4,7 @@ const { ethers, web3 } = require("hardhat");
 const GreeterArtifact = require("../artifacts/contracts/interfaces/IGreeter.sol/IGreeter.json");
 const MulticallArtifact = require("../artifacts/contracts/interfaces/IMulticall.sol/IMulticall.json");
 
-const { greeterAddress, multicallAddress } = require("../config.json").address.mumbai;
+const { greeterAddress, multicallAddress } = require("../config.json").address.arbitrumTestnet;
 
 async function mainEthers() {
   const [greeter, multicall] = await Promise.all([
