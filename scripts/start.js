@@ -14,7 +14,9 @@ async function mainEthers() {
 
   const { data } = await greeter.populateTransaction.setGreeting("test multicall");
 
-  const result = await multicall.tryBlockAndAggregate(true, [{ target: greeterAddress, callData: data }]);
+  // const result = await multicall.tryBlockAndAggregate(true, [{ target: greeterAddress, callData: data }]);
+
+  const result = await multicall.aggregate([{ target: greeterAddress, callData: data }]);
 
   console.log("result:", result);
 
@@ -29,8 +31,12 @@ async function mainWeb3() {
 
   const data = greeter.methods.setGreeting("Peter test multicall").encodeABI();
 
+  // const result = await multicall.methods
+  //   .tryBlockAndAggregate(true, [{ target: greeterAddress, callData: data }])
+  //   .send({ from: account });
+
   const result = await multicall.methods
-    .tryBlockAndAggregate(true, [{ target: greeterAddress, callData: data }])
+    .aggregate([{ target: greeterAddress, callData: data }])
     .send({ from: account });
 
   console.log("result:", result);
