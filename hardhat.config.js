@@ -25,10 +25,6 @@ module.exports = {
       url: "https://rinkeby.infura.io/v3/" + infuraKey,
       accounts: [privateKey],
     },
-    arbitrumTestnet: {
-      url: "https://rinkeby.arbitrum.io/rpc",
-      accounts: [privateKey],
-    },
     mumbai: {
       url: "https://rpc-mumbai.maticvigil.com",
       accounts: [privateKey],

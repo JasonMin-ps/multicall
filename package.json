@@ -11,9 +11,7 @@
     "start:rinkeby": "hardhat run scripts/start.js --network rinkeby",
     "deploy:mumbai": "hardhat run scripts/deploy.js --network mumbai",
     "verify:mumbai": "hardhat run scripts/verify.js --network mumbai",
-    "start:mumbai": "hardhat run scripts/start.js --network mumbai",
-    "deploy:arbitrumTestnet": "hardhat run scripts/deploy.js --network arbitrumTestnet",
-    "start:arbitrumTestnet": "hardhat run scripts/start.js --network arbitrumTestnet"
+    "start:mumbai": "hardhat run scripts/start.js --network mumbai"
   },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.0",

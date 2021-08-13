@@ -1,20 +1,20 @@
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.5;
 
-import "./interfaces/IGreeter.sol";
-
-contract Greeter is IGreeter {
+contract Greeter {
     string greeting;
+
+    event GreetingChanged(string);
 
     constructor(string memory _greeting) {
         greeting = _greeting;
     }
 
-    function greet() public view override returns (string memory _greeting) {
+    function greet() public view returns (string memory _greeting) {
         _greeting = greeting;
     }
 
-    function setGreeting(string memory _greeting) public override {
+    function setGreeting(string memory _greeting) public {
         greeting = _greeting;
         emit GreetingChanged(greeting);
     }

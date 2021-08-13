@@ -1,13 +1,20 @@
 //SPDX-License-Identifier: MIT
+
 pragma solidity >=0.5.0;
 pragma experimental ABIEncoderV2;
 
-import "./interfaces/IMulticall.sol";
+contract Multicall {
+    struct Call {
+        address target;
+        bytes callData;
+    }
+    struct Result {
+        bool success;
+        bytes returnData;
+    }
 
-contract Multicall is IMulticall {
     function aggregate(Call[] memory calls)
         public
-        override
         returns (uint256 blockNumber, bytes[] memory returnData)
     {
         blockNumber = block.number;
@@ -23,7 +30,6 @@ contract Multicall is IMulticall {
 
     function blockAndAggregate(Call[] memory calls)
         public
-        override
         returns (
             uint256 blockNumber,
             bytes32 blockHash,
@@ -39,78 +45,49 @@ contract Multicall is IMulticall {
     function getBlockHash(uint256 blockNumber)
         public
         view
-        override
         returns (bytes32 blockHash)
     {
         blockHash = blockhash(blockNumber);
     }
 
-    function getBlockNumber()
-        public
-        view
-        override
-        returns (uint256 blockNumber)
-    {
+    function getBlockNumber() public view returns (uint256 blockNumber) {
         blockNumber = block.number;
     }
 
-    function getCurrentBlockCoinbase()
-        public
-        view
-        override
-        returns (address coinbase)
-    {
+    function getCurrentBlockCoinbase() public view returns (address coinbase) {
         coinbase = block.coinbase;
     }
 
     function getCurrentBlockDifficulty()
         public
         view
-        override
         returns (uint256 difficulty)
     {
         difficulty = block.difficulty;
     }
 
-    function getCurrentBlockGasLimit()
-        public
-        view
-        override
-        returns (uint256 gaslimit)
-    {
+    function getCurrentBlockGasLimit() public view returns (uint256 gaslimit) {
         gaslimit = block.gaslimit;
     }
 
     function getCurrentBlockTimestamp()
         public
         view
-        override
         returns (uint256 timestamp)
     {
         timestamp = block.timestamp;
     }
 
-    function getEthBalance(address addr)
-        public
-        view
-        override
-        returns (uint256 balance)
-    {
+    function getEthBalance(address addr) public view returns (uint256 balance) {
         balance = addr.balance;
     }
 
-    function getLastBlockHash()
-        public
-        view
-        override
-        returns (bytes32 blockHash)
-    {
+    function getLastBlockHash() public view returns (bytes32 blockHash) {
         blockHash = blockhash(block.number - 1);
     }
 
     function tryAggregate(bool requireSuccess, Call[] memory calls)
         public
-        override
         returns (Result[] memory returnData)
     {
         returnData = new Result[](calls.length);
@@ -129,7 +106,6 @@ contract Multicall is IMulticall {
 
     function tryBlockAndAggregate(bool requireSuccess, Call[] memory calls)
         public
-        override
         returns (
             uint256 blockNumber,
             bytes32 blockHash,
